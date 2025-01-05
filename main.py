@@ -4,7 +4,10 @@ import openai
 import requests
 from github import Github
 from flask import Flask, request
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
 
 def get_available_models():
     openai.organization = os.environ['OPENAI_ORG_ID']
