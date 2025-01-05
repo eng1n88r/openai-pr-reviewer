@@ -35,14 +35,15 @@ app = Flask(__name__)
 @app.route('/webhook', methods=['POST'])
 def webhook():
     payload = request.get_json()
+    
+    """
     print(payload)
     return '', 200
-
     """
     if payload and payload.get('action') == 'opened':
         process_pull_request(payload)
     return '', 200
-    """
+    
 
 
 def process_pull_request(payload):
